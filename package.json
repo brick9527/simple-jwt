@@ -1,0 +1,30 @@
+{
+  "name": "simple-jwt",
+  "version": "0.1.0",
+  "description": "A simple jwt tool",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brick9527/simple-jwt.git"
+  },
+  "keywords": [
+    "jwt",
+    "JsonWebToken",
+    "LightWeight"
+  ],
+  "author": "fd (brick9527)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brick9527/simple-jwt/issues"
+  },
+  "homepage": "https://github.com/brick9527/simple-jwt#readme",
+  "devDependencies": {
+    "mocha": "^8.1.1"
+  }
+}
