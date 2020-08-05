@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 const assert = require('assert');
 const { getType } = require('../util/functions');
 
@@ -65,7 +67,7 @@ describe('decodeJWT Test', function() {
         decodeJWT(jwt, options.secretKey, function(err, data) {
           assert.equal(err, null);
           assert.equal(data.id, 123);
-        })
+        });
       });
     });
   });

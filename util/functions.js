@@ -14,7 +14,7 @@ const errorHandler = function(error, callback) {
     return false;
   }
   throw error;
-}
+};
 
 /**
  * 获取数据的真实类型
@@ -23,7 +23,7 @@ const errorHandler = function(error, callback) {
  */
 const getType = function(param) {
   return Object.prototype.toString.call(param).replace(']', '').replace('[object ', '');
-}
+};
 
 module.exports = {
   errorHandler,
