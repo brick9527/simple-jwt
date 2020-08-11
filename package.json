@@ -1,5 +1,5 @@
 {
-  "name": "simple-jwt",
+  "name": "fd-simple-jwt",
   "version": "0.1.0",
   "description": "A simple jwt tool",
   "main": "index.js",

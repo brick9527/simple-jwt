@@ -6,7 +6,7 @@
 
 # 简介
 
-`simple-jwt`是一款使用纯JS开发的简单JWT工具。无任何第三方依赖包，能够保持该工具处于一个高度源码级定制的水准。
+`fd-simple-jwt`是一款使用纯JS开发的简单JWT工具。无任何第三方依赖包，能够保持该工具处于一个高度源码级定制的水准。
 
 # 特色
 
@@ -18,24 +18,24 @@
 # 安装（Install）
 
 ```bash
-npm install simple-jwt --save
+npm install fd-simple-jwt --save
 ```
 
 中国大陆地区请使用cnpm
 
 ```bash
-cnpm install simple-jwt --save
+cnpm install fd-simple-jwt --save
 ```
 
 # 使用（Usage）
 
 ```js
-const SimpleJWT = require('simple-jwt');
+const SimpleJWT = require('fd-simple-jwt');
 ```
 
 # API
 
-`simple-jwt`共包含两个方法：
+`fd-simple-jwt`共包含两个方法：
 
 - encodeJWT：对数据进行JWT加密操作
 - decodeJWT：对JWT格式的数据进行解密操作
@@ -53,7 +53,7 @@ const SimpleJWT = require('simple-jwt');
 #### 同步
 
 ```js
-const { encodeJWT } = require('simple-jwt');
+const { encodeJWT } = require('fd-simple-jwt');
 
 const options = {
   secretKey: 'secret key', // secret为JWT的秘钥，用户需自行配置妥善保管
@@ -67,10 +67,10 @@ const jwt = encodeJWT(options, data);
 
 #### 异步
 
-`simple-jwt`方法第三个参数传入一个回调函数即为异步方法，回调函数贯彻**错误先行原则**，第一个参数为`err`，如果在方法执行过程中出现错误，该`err`参数为一个`Error`实例；否则为`null`。第二个参数为成功生成的jwt。（如果失败或错误，则回调函数不会存在第二个形参，此时的`jwt`变量为`undefined`）
+`fd-simple-jwt`方法第三个参数传入一个回调函数即为异步方法，回调函数贯彻**错误先行原则**，第一个参数为`err`，如果在方法执行过程中出现错误，该`err`参数为一个`Error`实例；否则为`null`。第二个参数为成功生成的jwt。（如果失败或错误，则回调函数不会存在第二个形参，此时的`jwt`变量为`undefined`）
 
 ```js
-const { encodeJWT } = require('simple-jwt');
+const { encodeJWT } = require('fd-simple-jwt');
 
 const options = {
   secretKey: 'secret key', // secret为JWT的秘钥，用户需自行配置妥善保管
@@ -96,7 +96,7 @@ encodeJWT(options, data, function(err, jwt) {
 #### 同步
 
 ```js
-const { decodeJWT } = require('simple-jwt');
+const { decodeJWT } = require('fd-simple-jwt');
 
 const jwt = '...'; // 该值为生成的jwt字符串
 const options = {
@@ -109,7 +109,7 @@ const result = decodeJWT(jwt, options.secretKey);
 #### 异步
 
 ```js
-const { decodeJWT } = require('simple-jwt');
+const { decodeJWT } = require('fd-simple-jwt');
 
 const jwt = '...'; // 该值为生成的jwt字符串
 const options = {
