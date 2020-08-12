@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/brick9527/simple-jwt.svg?branch=master)](https://travis-ci.org/brick9527/simple-jwt)
-![NPM](https://img.shields.io/npm/l/simple-jwt)
+![NPM](https://img.shields.io/npm/l/fd-simple-jwt)
 ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/brick9527/simple-jwt/master)
 ![GitHub last commit](https://img.shields.io/github/last-commit/brick9527/simple-jwt)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/brick9527/simple-jwt)
@@ -45,9 +45,10 @@ const SimpleJWT = require('fd-simple-jwt');
 生成JWT字符串。该方法支持同步/异步使用。
 
 `encodeJWT`接受2~3个参数：
-- （必须）options
-- - options.secretKey：加密使用的秘钥
+- options
+  - （必须）options.secretKey：加密使用的秘钥
 - （必须）data：所需要加密的数据（该数据将会添加到jwt数据体中在消息发送时一同发送）
+  - （可选）data.expire：jwt过期时间，单位：秒（second）。如果设置了expire，解密时会自行根据创建时间（`data.startTime`）判断是否过期。如果过期将返回`new Error('JWT expired.')`。
 - （可选）callback(err, jwt)：回调函数。`jwt`是成功加密之后的jwt字符串。若不传入该回调函数，则会将jwt数据直接return回来。
 
 #### 同步
