@@ -4,11 +4,15 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/brick9527/simple-jwt)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/brick9527/simple-jwt)
 
-# 简介
+# 导航（Guide）
+
+[Document-EN](./README-EN.md)
+
+# 简介（Introduction）
 
 `fd-simple-jwt`是一款使用纯JS开发的简单JWT工具。无任何第三方依赖包，能够保持该工具处于一个高度源码级定制的水准。
 
-# 特色
+# 特色（Features）
 
 - 轻量级
 - 使用方便
@@ -40,9 +44,9 @@ const SimpleJWT = require('fd-simple-jwt');
 - encodeJWT：对数据进行JWT加密操作
 - decodeJWT：对JWT格式的数据进行解密操作
 
-### encodeJWT
+## encodeJWT
 
-生成JWT字符串。该方法支持同步/异步使用。
+生成JWT字符串。
 
 `encodeJWT`接受2~3个参数：
 - options
@@ -51,7 +55,7 @@ const SimpleJWT = require('fd-simple-jwt');
   - （可选）data.expire：jwt过期时间，单位：秒（second）。如果设置了expire，解密时会自行根据创建时间（`data.startTime`）判断是否过期。如果过期将返回`new Error('JWT expired.')`。
 - （可选）callback(err, jwt)：回调函数。`jwt`是成功加密之后的jwt字符串。若不传入该回调函数，则会将jwt数据直接return回来。
 
-#### 同步
+#### 直接返回
 
 ```js
 const { encodeJWT } = require('fd-simple-jwt');
@@ -66,7 +70,7 @@ const data = {
 const jwt = encodeJWT(options, data);
 ```
 
-#### 异步
+#### 回调函数
 
 `fd-simple-jwt`方法第三个参数传入一个回调函数即为异步方法，回调函数贯彻**错误先行原则**，第一个参数为`err`，如果在方法执行过程中出现错误，该`err`参数为一个`Error`实例；否则为`null`。第二个参数为成功生成的jwt。（如果失败或错误，则回调函数不会存在第二个形参，此时的`jwt`变量为`undefined`）
 
@@ -85,16 +89,16 @@ encodeJWT(options, data, function(err, jwt) {
 })
 ```
 
-### decodeJWT
+## decodeJWT
 
-解密JWT字符串。该方法支持同步/异步使用。
+解密JWT字符串。
 
 `decodeJWT`接收2~3个参数：
 - （必须）jwt：所需解密的jwt字符串。
 - （必须）secretKey：加密/解密的秘钥。
 - （可选）callback(err, data)：回调函数。`data`是成功解密之后，jwt数据体中的数据。若不传入该回调函数，则会将解密的数据直接return回来。
 
-#### 同步
+#### 直接返回
 
 ```js
 const { decodeJWT } = require('fd-simple-jwt');
@@ -107,7 +111,7 @@ const options = {
 const result = decodeJWT(jwt, options.secretKey);
 ```
 
-#### 异步
+#### 回调函数
 
 ```js
 const { decodeJWT } = require('fd-simple-jwt');
